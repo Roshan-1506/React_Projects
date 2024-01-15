@@ -15,15 +15,16 @@ export const todoSlice = createSlice({
                 id : nanoid(),
                 text : action.payload
             }
-            state.todos.push(todo)    // updating the state
+            state.todos.push(todo)    // taking initialState todos here and updating the state  
         },
 
         removeTodo : (state , action) => {
-            state.todos = state.todos.filter((todo) => todo.id == action.payload)
+            state.todos = state.todos.filter((todo) => todo.id !== action.payload)   // filter always gives true value     
         }
     }
 })
 
-export const {addTodo , removeTodo} =   todoSlice.actions
+// we are accessing individual funtionality here bcoz it will help us in component
+export const {addTodo , removeTodo} =   todoSlice.actions // we get values from actions
 
 export default todoSlice.reducer                                
