@@ -6,6 +6,8 @@ import { addTodo } from '../features/todo/TodoSlice'
 function AddTodo() {
 
     const [input, setInput] = useState('')
+
+    // want to send data use dispatch method
     const dispatch = useDispatch()         // creating a useDispatch method
 
     const addTodoHandler = (e) => {
